@@ -3,7 +3,7 @@
 - 彭乔&emsp;3190802007
 - 刘国航&emsp;3190802009
 - 杨璐&emsp;3190809001
-- 张玥靓&emsp;3190802017
+- 张玥靓&emsp;3190809002
 - 谭鹏飞&3190802020
 - 邓杭杭&emsp;3190802015
 - 张运理&emsp;
@@ -12,10 +12,10 @@
 
 
 # 作业完成简介
-&emsp;&emsp;小组分为两队，分别使用了自己的方法完成了作业。
+&emsp;&emsp;小组分为三个小队，分别使用了自己的方法完成了作业。
 
 -----
-# 第一组
+# 第一小分队
 1. 安装写代码需要的包
 ```R
 # install.packages("cluster")
@@ -144,12 +144,32 @@ map
 ![OD效果图](https://user-images.githubusercontent.com/15363304/67293540-25dffd00-f517-11e9-8bf2-c7fd9d506a44.png)
 
 -----
-# 第二组
+# 第二小分队
 
+- 起点
+```r
+library(ggplot2)
+oddataset <- read.csv("./df3.csv")
+kc_means_set <- cbind(oddataset[5], oddataset[6])
+kc_set <- kmeans(kc_means_set, 4)
+Lng = as.matrix(oddataset[5])
+Lat = as.matrix(oddataset[6])
+plot(Lng,Lat,col=kc_set$cluster, pch=20)
+```
+![起点聚类效果图](https://user-images.githubusercontent.com/15363304/67295293-82dcb280-f519-11e9-9e7d-3a936c1c1ae5.png)
+- 终点
+```r
+library(ggplot2)
+oddataset <- read.csv("./df3.csv")
+kc_means_set <- cbind(oddataset[5], oddataset[6])
+kc_set <- kmeans(kc_means_set, 4)
+Lng = as.matrix(oddataset[7])
+Lat = as.matrix(oddataset[8])
+plot(Lng,Lat,col=kc_set$cluster, pch=20)
+```
+![终点聚类效果图](https://user-images.githubusercontent.com/15363304/67295305-853f0c80-f519-11e9-9642-b9456b2d72bf.png)
 
-
-
-
+# 第三小分队
 
 
 
