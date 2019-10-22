@@ -171,6 +171,20 @@ plot(Lng,Lat,col=kc_set$cluster, pch=20)
 
 # 第三小分队
 
+- 起点
+```r
+read.csv("df3.csv", header = FALSE)
+km <- kmeans(df3[,5:6], 3,iter.max = 30)
+plot(df3[c("Lng", "Lat")], col = km$cluster,pch = as.integer(iris$Species))
+```
 
+![起点聚类图](https://user-images.githubusercontent.com/15363304/67295958-67be7280-f51a-11e9-9c3a-e5ff4ffe4b3e.png)
 
+- 终点
+```r
+read.csv("df3.csv", header = FALSE)
+km <- kmeans(df3[,7:8], 3)
+plot(df3[c("Lng_e", "Lat_e")], col = km$cluster,pch = as.integer(iris$Species))
+```
+![终点聚类图](https://user-images.githubusercontent.com/15363304/67295975-6db45380-f51a-11e9-9e0f-133e44221323.png)
 
