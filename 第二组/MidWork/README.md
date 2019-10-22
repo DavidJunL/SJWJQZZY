@@ -7,7 +7,7 @@ Lng_e 终点经度
 Lat_e 终点纬度
 
 
-![数据展示：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/data.png)
+![数据展示：](第二组/MidWork/data.png)
 ## 二、聚类实现与效果
 ### 1、起点聚类
 ``` R
@@ -49,8 +49,8 @@ autoplot(
 )
 ```
 ### 效果图如下：
-![起点聚类数：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/origin1.png)
-![起点聚类效果图：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/origin2.png)
+![起点聚类数：](第二组/MidWork/origin1.png)
+![起点聚类效果图：](第二组/MidWork/origin2.png)
 ### 2、终点聚类
 ``` R
 library(ggplot2)
@@ -92,8 +92,8 @@ autoplot(
 )
 ```
 ### 效果图如下：
-![终点聚类数：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/destination1.png)
-![终点聚类效果图：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/destination2.png)
+![终点聚类数：](第二组/MidWork/destination1.png)
+![终点聚类效果图：](第二组/MidWork/destination2.png)
 ### 3、OD线聚类
 ``` R
 library(leaflet)
@@ -131,8 +131,8 @@ for (i in 1:nrow(df3)) {
 }
 map
 ```
-![OD线聚类数：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/od1.png)
-![OD线聚类效果图：](https://github.com/DavidJunL/SJWJQZZY/tree/master/第二组/MidWork/od2.png)
+![OD线聚类数：](第二组/MidWork/od1.png)
+![OD线聚类效果图：](第二组/MidWork/od2.png)
 ## 三、总结
 在本次作业中，我们实现了起点、终点和OD线的聚类。思路均为先计算聚类结果的平均轮廓值，根据平均轮廓值确定聚类数目，之后再使用k-means算法进行聚类。
 
