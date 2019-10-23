@@ -1,6 +1,26 @@
 -期中作业
 =========
-小组成员：韩旭、侯涛、李炜、廖文利、任宇、孙琛恺、谢俊章、谢雨、杨尚林、尹麟名(字母排序）
+小组成员(字母排序）：
+---
+3190704005 韩旭
+---
+3190702019 侯涛
+----
+3190702001 李炜
+---
+3190702017 廖文利
+---
+3190702016 任宇
+---
+3190702020 孙琛恺
+---
+3190702026 谢俊章
+---
+3190704006 谢雨
+---
+3190704004 杨尚林
+---
+3190702004 尹麟名
 -------
 # (数据选取为绵阳市某时段人流情况)
 # 一、数据样本
@@ -73,7 +93,52 @@ PlotOnStaticMap(doubs.map,lat_e,lng_e,cex = 1.0,add=TRUE,col = descdata.kmeans$c
 ### 2、OD线聚类
 #### 算法
 使用K-means算法对线的中心点位置聚类
-#### 代码
+
+#### PlotOnStaticMap画图
+```
+#定义y1,y0,z1,z0简化计算过程
+y1<-lng_e
+y0<-lng
+z1<-lat_e
+z0<-lat
+di<-(y1-y0)/(z1-z0)
+newdata<-data.frame(mydata,di)
+#将有缺省值的行数据删除。
+newdata<-newdata[complete.cases(newdata[,10]),]
+#实际工作中，数据集很少是完整的，许多情况下样本中都会包括若干缺失值NA，这在进行数据分析和挖掘时比较麻烦。
+di<-na.omit(di) 
+#根据距离进行k—means算法聚类
+x.kmeans<-kmeans(di,3)
+newdata <-na.omit(newdata)
+newdata<-data.frame(newdata,x.kmeans$cluster)
+zy<-(newdata$Lng_e+newdata$Lng)/2
+zx<-(newdata$Lat_e+newdata$Lat)/2
+#根据列进行合并，形成角度和经纬度生成的矩阵
+c<-cbind(zx,zy)
+#根据每条连线的中心点进行k—means算法聚类
+x2.kmeans<-kmeans(c,3)
+newdata<-data.frame(newdata,x2.kmeans$cluster)
+#将聚类结果分为三类
+my.data1<-subset(newdata, x2.kmeans.cluster== '1')
+my.data2<-subset(newdata, x2.kmeans.cluster== '2')
+my.data3<-subset(newdata, x2.kmeans.cluster== '3')
+#第一类的结果用绿线表示
+mydata1.f1<-c(my.data1$Lat,my.data1$Lat_e)
+mydata1.f2<-c(my.data1$Lng,my.data1$Lng_e)
+PlotOnStaticMap(doubs.map,mydata1.f1,mydata1.f2,lwd=1.5,col = "green", FUN = lines, add=TRUE)
+#第二类的结果用蓝线表示
+mydata2.f1<-c(my.data2$Lat,my.data2$Lat_e)
+mydata2.f2<-c(my.data2$Lng,my.data2$Lng_e)
+PlotOnStaticMap(doubs.map,mydata2.f1,mydata2.f2,lwd=1.5,col = "blue", FUN = lines, add=TRUE)
+#第三类的结果用红线表示
+mydata3.f1<-c(my.data3$Lat,my.data3$Lat_e)
+mydata3.f2<-c(my.data3$Lng,my.data3$Lng_e)
+PlotOnStaticMap(doubs.map,mydata3.f1,mydata3.f2,lwd=1.5,col = "red", FUN = lines, add=TRUE)
+```
+
+![OD线聚类.png](https://github.com/shengunxiansen/Test/raw/master/OD线聚类2.png)
+
+#### leaflet画图
 ```
 library(leaflet)
 library(maps)
