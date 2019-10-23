@@ -33,8 +33,10 @@ leaflet(end_lat_lng)%>%addProviderTiles("Esri.WorldStreetMap")%>%
 ``` 
 ## 2.2说明
     采用k-means聚类方法，聚类数选择为6.
-## 1.3可视化图形
-![](https://github.com/DavidJunL/SJWJQZZY/blob/master/第六组/images/起点聚类.png)
+## 2.3可视化图形
+![](https://github.com/DavidJunL/SJWJQZZY/blob/master/第六组/images/终点聚类.png)
+
+
 
 ## 组员：
 ## 何瑞
