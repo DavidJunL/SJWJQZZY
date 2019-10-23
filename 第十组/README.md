@@ -19,7 +19,7 @@
     kml_e	kml_s	Lng	Lat	Lng_e	Lat_e	count
 终点编号	起点编号	起点经度	起点纬度	终点经度	终点纬度	轨迹条数
 ```
-![数据样本.png](https://github.com/shengunxiansen/Test/raw/master/数据样本.png)
+![数据样本.png](https://github.com/DavidJunL/SJWJQZZY/blob/master/第十组/数据样本.png)
 # 二、数据处理
 ## 算法
 使用K-means算法对起点和终点聚类
