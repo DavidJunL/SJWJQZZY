@@ -14,17 +14,17 @@
 
 - 起点
 
-  ![](/img/start_point.png)
+  ![](img/start_point.png)
 
   
 
 - 终点
 
-  ![](/img/end_point.png)
+  ![](img/end_point.png)
 
 - OD线
 
-  ![](/img/OD_line.png)
+  ![](img/OD_line.png)
 
 
 
