@@ -101,7 +101,7 @@ for (i in 1:nrow(ViewData)) {
 map<-addCircleMarkers(map,lng = ViewData$Lng_e,lat = ViewData$Lat_e,color = 'red',radius = ViewData$count/5)
 map
 ```
-![OD线聚类.png](https://github.com/shengunxiansen/Test/raw/master/OD线聚类.png)
+![OD线聚类.png](https://github.com/shengunxiansen/Test/raw/master/OD线聚类1.png)
 
 OD线聚类使用的是K-means算法对线的中心点聚类，共聚为5类，分别使用红、绿、蓝、黄、黑表示。
 使用终点标记的大小表示轨迹条数的多少。
