@@ -2,26 +2,16 @@
 =========
 小组成员(字母排序）：
 ---
-3190704005 韩旭
----
-3190702019 侯涛
-----
-3190702001 李炜
----
-3190702017 廖文利
----
-3190702016 任宇
----
-3190702020 孙琛恺
----
-3190702026 谢俊章
----
-3190704006 谢雨
----
-3190704004 杨尚林
----
-3190702004 尹麟名
--------
+### 3190704005 韩  旭：分析点聚类结果并反复测试确定最合适的K值，成果展示。
+### 3190702019 侯  涛：查找相关文献，从kmeans，k中值，PAM三种聚类方法中，选择合适的方法进行点聚类。
+### 3190702001 李  炜：阅读文献，查找OD线聚类方案。
+### 3190702017 廖文利：文件读取，分析数据，点聚类，绘制终点点的大小展示路径数目的多少，编写报告。
+### 3190702016 任  宇：使用kmeans算法对点进行聚类，参与修改点聚类代码。
+### 3190702020 孙琛恺：文件读取，分析数据，编写并修改点聚类及PlotOnStaticmap画图程序，编写报告。
+### 3190702026 谢俊章：文件读取，分析数据，阅读文献，查找OD线聚类方案。
+### 3190704006 谢  雨：文件读取，分析数据，od线特征提取，od线聚类，描绘od线，leaflet画图。
+### 3190704004 杨尚林：参与修改OD线聚类代码，分析结果。
+### 3190702004 尹麟名：分析线聚类结果并根据编写的程序反复测试最合适的K值。
 # (数据选取为绵阳市某时段人流情况)
 # 一、数据样本
 本次数据分析使用的数据如下的395条数据。
@@ -67,7 +57,7 @@ PlotOnStaticMap(doubs.map,lat_e,lng_e,cex = 1.0,add=TRUE,col = descdata.kmeans$c
 ```
 #### 起点聚类
 
-![起点聚类.png](https://github.com/shengunxiansen/Test/raw/master/起点聚类.png)
+![起点聚类.png](https://github.com/DavidJunL/SJWJQZZY/blob/master/第十组/起点聚类.png)
 
 将起点数据使用K-means算法聚为了五类，分别用红、绿、深蓝、浅蓝、黑表示。
 培城区（红色）
@@ -77,7 +67,7 @@ PlotOnStaticMap(doubs.map,lat_e,lng_e,cex = 1.0,add=TRUE,col = descdata.kmeans$c
 元通村至永兴（绿色）
 
 #### 终点聚类
-![终点聚类.png](https://github.com/shengunxiansen/Test/raw/master/终点聚类.png)
+![终点聚类.png](https://github.com/DavidJunL/SJWJQZZY/blob/master/第十组/终点聚类.png)
 
 终点数据同样使用k-means算法聚为了五类，分别使用红、绿、深蓝、浅蓝、黑表示。
 科学城（浅蓝色）
@@ -136,7 +126,7 @@ mydata3.f2<-c(my.data3$Lng,my.data3$Lng_e)
 PlotOnStaticMap(doubs.map,mydata3.f1,mydata3.f2,lwd=1.5,col = "red", FUN = lines, add=TRUE)
 ```
 
-![OD线聚类.png](https://github.com/shengunxiansen/Test/raw/master/OD线聚类2.png)
+![OD线聚类.png](https://github.com/DavidJunL/SJWJQZZY/blob/master/第十组/OD线聚类2.png)
 
 #### leaflet画图
 ```
@@ -166,7 +156,11 @@ for (i in 1:nrow(ViewData)) {
 map<-addCircleMarkers(map,lng = ViewData$Lng_e,lat = ViewData$Lat_e,color = 'red',radius = ViewData$count/5)
 map
 ```
-![OD线聚类.png](https://github.com/shengunxiansen/Test/raw/master/OD线聚类1.png)
+![OD线聚类.png](https://github.com/DavidJunL/SJWJQZZY/blob/master/第十组/OD线聚类.png)
 
 OD线聚类使用的是K-means算法对线的中心点聚类，共聚为5类，分别使用红、绿、蓝、黄、黑表示。
 使用终点标记的大小表示轨迹条数的多少。
+
+#### 结论
+
+从OD聚类图中可以看到，在培城区、游仙区的轨迹密集，在永兴、元通村附近轨迹稀疏，由此可以猜测培城区和游仙区很有可能是主城区，生活设施便利，人口密度较大。永兴、元通村路径普遍较长，可能是因为附近缺少某些设施，如学校、医院、汽车站等。
