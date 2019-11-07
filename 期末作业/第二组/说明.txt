@@ -1,0 +1,9 @@
+one-气象类（150）
+two-混杂的（150）
+three-计算机类（184）
+name-文章名
+author-作者
+publication-出版物
+year-出版时间
+classificationem-分类号
+keywords-关键字
